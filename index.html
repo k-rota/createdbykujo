@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Security: lock down where resources can load from. Fonts are the only
+       third-party origin allowed, and only Google's font hosts at that. -->
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; img-src 'self' data:; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none';" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="description" content="createdbykujo — custom websites built by Kujo, a computer information systems software engineer who loves building things." />
+  <title>createdbykujo — custom websites that don't look like everyone else's</title>
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Space+Grotesk:wght@400;500;700&family=Space+Mono:ital,wght@0,400;0,700;1,700&display=swap" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- animated background blobs -->
+  <div class="aurora" aria-hidden="true">
+    <span class="blob b1"></span>
+    <span class="blob b2"></span>
+    <span class="blob b3"></span>
+    <div class="grid-overlay"></div>
+  </div>
+
+  <!-- custom cursor glow -->
+  <div class="cursor-glow" aria-hidden="true"></div>
+
+  <header class="nav glass">
+    <a class="brand" href="#top">
+      <img src="assets/logo.png" alt="createdbykujo logo" width="17" height="32" />
+      <span>created<b>by</b>kujo</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#about">about</a>
+      <a href="#work">work</a>
+      <a href="#templates">templates</a>
+      <a href="#contact" class="nav-cta">hire me</a>
+    </nav>
+    <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main id="top">
+    <!-- HERO — typographic wordmark as the centerpiece -->
+    <section class="hero">
+      <h1 class="wordmark" aria-label="createdbykujo">
+        <span class="wm-type" data-reveal>
+          <span class="wm-created">created</span>
+          <span class="wm-by">by</span>
+          <span class="wm-kujo">kujo</span>
+        </span>
+      </h1>
+      <p class="hero-sub" data-reveal>
+        Hey, I'm Kujo. <strong>createdbykujo</strong> is my studio for crafting
+        custom, fast, and slightly-unconventional websites for businesses or
+        people who'd rather stand out than blend in.
+      </p>
+      <div class="hero-cta" data-reveal>
+        <a href="#contact" class="btn btn-primary">start a project</a>
+        <a href="#work" class="btn btn-ghost">see the work</a>
+      </div>
+      <div class="stat-row" data-reveal>
+        <div class="stat"><b data-count="1">0</b><span>name</span></div>
+        <div class="stat"><b data-count="100" data-suffix="%">0</b><span>custom code</span></div>
+        <div class="stat"><b>&infin;</b><span>options</span></div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <h2 class="section-title" data-reveal><span class="num">01</span> about me</h2>
+      <div class="about-grid">
+        <div class="glass card about-bio" data-reveal>
+          <p>
+            I'm a recent graduate in <strong>Computer Information Systems —
+            Software Engineering</strong>, and an unapologetic builder. Give me
+            an empty editor and a problem and I'm happy.
+          </p>
+          <p>
+            createdbykujo started because I kept noticing the same templated,
+            forgettable websites everywhere. I'd rather bend the rules, mix
+            motion with restraint, and ship something that actually feels like
+            <em>you</em> — while keeping it fast and secure under the hood.
+          </p>
+          <p>
+            When I'm not shipping, I'm tearing apart how something works just to
+            rebuild it better.
+          </p>
+        </div>
+        <div class="glass card about-stack" data-reveal>
+          <h3>tools I reach for</h3>
+          <ul class="chips">
+            <li>TypeScript</li><li>HTML</li><li>CSS</li><li>Node.js</li>
+            <li>React</li><li>SQL</li><li>Git</li><li>APIs</li>
+            <li>Security basics</li><li>UI/UX</li>
+          </ul>
+          <h3>how I work</h3>
+          <p class="muted">
+            Discovery → design → build → harden → launch. You stay in the loop
+            the whole way.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="section">
+      <h2 class="section-title" data-reveal><span class="num">02</span> services &amp; pricing</h2>
+      <p class="section-lead" data-reveal>Starting points, not handcuffs — every project gets a custom quote.</p>
+      <div class="pricing-grid">
+        <article class="glass card price-card tilt" data-reveal>
+          <h3>The Starter</h3>
+          <p class="price">$350<span>+</span></p>
+          <p class="muted">A sharp one-page site to put you on the map.</p>
+          <ul class="feature-list">
+            <li>Single-page custom design</li>
+            <li>Mobile responsive</li>
+            <li>Contact form</li>
+            <li>Basic SEO + analytics</li>
+          </ul>
+          <a href="#contact" class="btn btn-ghost full" data-plan="The Starter">Select</a>
+        </article>
+        <article class="glass card price-card tilt" data-reveal>
+          <h3>The Studio</h3>
+          <p class="price">$850<span>+</span></p>
+          <p class="muted">A multi-page site with personality and motion.</p>
+          <ul class="feature-list">
+            <li>Up to 5 custom pages</li>
+            <li>Animations &amp; interactions</li>
+            <li>CMS so you can edit content</li>
+            <li>Performance &amp; security hardening</li>
+          </ul>
+          <a href="#contact" class="btn btn-ghost full" data-plan="The Studio">Select</a>
+        </article>
+        <article class="glass card price-card featured tilt" data-reveal>
+          <span class="badge">most popular</span>
+          <h3>The Custom</h3>
+          <p class="price">let's talk</p>
+          <p class="muted">Web apps, dashboards, integrations — the weird stuff.</p>
+          <ul class="feature-list">
+            <li>Full-stack builds</li>
+            <li>Auth &amp; databases</li>
+            <li>Third-party integrations</li>
+            <li>Ongoing support</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary full" data-plan="The Custom">Select</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- WORK -->
+    <section id="work" class="section">
+      <h2 class="section-title" data-reveal><span class="num">03</span> selected work</h2>
+      <p class="section-lead" data-reveal>One studio, many voices. Each card is a live demo in a totally different design language — same createdbykujo DNA underneath.</p>
+      <div class="work-grid">
+        <a class="word-card" href="work/neobrutalism.html" data-reveal>
+          <div class="wt wt-neo"><span>Neobrutalism</span></div>
+          <div class="word-meta"><p>loud · borders, shadows, attitude</p><span class="work-arrow">↗</span></div>
+        </a>
+        <a class="word-card" href="work/glassmorphism.html" data-reveal>
+          <div class="wt wt-glass"><span>Glassmorphism</span></div>
+          <div class="word-meta"><p>frosted · soft light, blur, depth</p><span class="work-arrow">↗</span></div>
+        </a>
+        <a class="word-card" href="work/terminal.html" data-reveal>
+          <div class="wt wt-term"><span>./terminal</span></div>
+          <div class="word-meta"><p>CRT · green phosphor, monospace soul</p><span class="work-arrow">↗</span></div>
+        </a>
+        <a class="word-card" href="work/asymmetrical.html" data-reveal>
+          <div class="wt wt-asym"><span>Asymmetrical</span></div>
+          <div class="word-meta"><p>editorial · broken grid, big type</p><span class="work-arrow">↗</span></div>
+        </a>
+      </div>
+    </section>
+
+    <!-- TEMPLATES -->
+    <section id="templates" class="section">
+      <h2 class="section-title" data-reveal><span class="num">04</span> templates</h2>
+      <p class="section-lead" data-reveal>Starter sites for real businesses, each on the fictional "Example" brand. Pick a vibe, picture yours in it.</p>
+      <div class="work-grid tpl-grid">
+        <a class="word-card" href="templates/cafe.html" data-reveal>
+          <div class="wt wt-cafe"><span>cafe</span></div>
+          <div class="word-meta"><p>menu, hours, ordering</p><span class="work-arrow">↗</span></div>
+        </a>
+        <a class="word-card" href="templates/gym.html" data-reveal>
+          <div class="wt wt-gym"><span>gym</span></div>
+          <div class="word-meta"><p>class schedule + signup</p><span class="work-arrow">↗</span></div>
+        </a>
+        <a class="word-card" href="templates/bar.html" data-reveal>
+          <div class="wt wt-bar"><span>bar</span></div>
+          <div class="word-meta"><p>cocktail list, hours, events</p><span class="work-arrow">↗</span></div>
+        </a>
+        <a class="word-card" href="templates/photography.html" data-reveal>
+          <div class="wt wt-photo"><span>photography</span></div>
+          <div class="word-meta"><p>portfolio gallery, packages</p><span class="work-arrow">↗</span></div>
+        </a>
+        <a class="word-card" href="templates/restaurant.html" data-reveal>
+          <div class="wt wt-rest"><span>restaurant</span></div>
+          <div class="word-meta"><p>seasonal menu, booking</p><span class="work-arrow">↗</span></div>
+        </a>
+        <a class="word-card" href="templates/portfolio.html" data-reveal>
+          <div class="wt wt-port"><span>portfolio</span></div>
+          <div class="word-meta"><p>projects, services, about</p><span class="work-arrow">↗</span></div>
+        </a>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <h2 class="section-title" data-reveal><span class="num">05</span> let's build something</h2>
+      <div class="contact-wrap">
+        <div class="glass card contact-info" data-reveal>
+          <h3>Got an idea?</h3>
+          <p>Tell me about it. I reply to every real message within a day or two.</p>
+          <a class="contact-mail" href="mailto:kujo@createdbykujo.com">kuj

@@ -1,0 +1,72 @@
+/* Asymmetrical editorial demo — createdbykujo */
+:root{--ink:#16160f;--paper:#eae6da;--accent:#ff4d2e;--line:#16160f;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:"Inter",system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.55;overflow-x:hidden;}
+a{color:inherit;text-decoration:none;}img{display:block;}
+h1,h2,h3,.big,.logo{font-family:"Syne",sans-serif;}
+
+.cbk-badge{position:fixed;bottom:18px;left:18px;z-index:99;display:flex;align-items:center;gap:8px;
+  background:var(--ink);color:var(--paper);padding:8px 14px;font-size:.78rem;font-weight:600;transition:transform .2s;}
+.cbk-badge:hover{transform:rotate(-2deg) translateY(-2px);}
+.cbk-badge img{height:20px;width:auto;}
+.cbk-badge b{color:var(--accent);}
+
+.nav{display:flex;align-items:baseline;gap:clamp(14px,5vw,60px);padding:26px clamp(20px,5vw,60px);
+  border-bottom:1.5px solid var(--line);flex-wrap:wrap;}
+.logo{font-weight:800;font-size:1.3rem;}
+.idx{font-size:.8rem;letter-spacing:1px;opacity:.6;text-transform:uppercase;}
+.nav nav{margin-left:auto;display:flex;gap:26px;font-size:.9rem;}
+.nav nav a{border-bottom:1.5px solid transparent;}
+.nav nav a:hover{border-color:var(--accent);color:var(--accent);}
+
+main{width:100%;}
+
+/* hero — collide the type with the margins */
+.hero{position:relative;min-height:88vh;padding:clamp(20px,5vw,60px);overflow:hidden;}
+.big{font-weight:800;line-height:.8;letter-spacing:-4px;display:block;position:absolute;}
+.big-1{font-size:clamp(6rem,28vw,22rem);top:4%;left:-2%;color:var(--ink);}
+.big-2{font-size:clamp(6rem,28vw,22rem);top:34%;right:-3%;color:var(--accent);text-align:right;}
+.kicker{position:absolute;top:30%;left:50%;font-size:.85rem;letter-spacing:2px;text-transform:uppercase;
+  writing-mode:vertical-rl;opacity:.7;}
+.lead{position:absolute;bottom:16%;left:clamp(20px,6vw,80px);max-width:34ch;font-size:1.15rem;font-weight:300;}
+.line-link{position:absolute;font-weight:600;border-bottom:2px solid var(--accent);}
+.l-a{bottom:9%;left:clamp(20px,6vw,80px);}
+.l-a:hover{color:var(--accent);}
+.float-num{position:absolute;bottom:6%;right:6%;font-family:"Syne",sans-serif;font-weight:800;font-size:clamp(2rem,6vw,4rem);
+  -webkit-text-stroke:1.5px var(--ink);color:transparent;}
+
+/* work — staggered, off-grid cards */
+.work{position:relative;padding:clamp(40px,8vw,120px) clamp(20px,5vw,60px);border-top:1.5px solid var(--line);}
+.sec-h{font-size:clamp(2.4rem,7vw,5rem);font-weight:800;line-height:.85;letter-spacing:-2px;margin-bottom:50px;}
+.proj{border-top:1.5px solid var(--line);padding:22px 0;max-width:640px;display:flex;align-items:baseline;gap:24px;transition:transform .2s,color .2s;}
+.proj:hover{color:var(--accent);transform:translateX(14px);}
+.proj .pn{font-family:"Syne",sans-serif;font-weight:800;font-size:1rem;opacity:.5;}
+.proj h3{font-size:clamp(1.6rem,4vw,2.8rem);font-weight:600;flex:1;}
+.proj p{font-size:.85rem;text-transform:uppercase;letter-spacing:1px;opacity:.6;}
+.p1{margin-left:0;}.p2{margin-left:clamp(0px,12vw,180px);}.p3{margin-left:clamp(0px,5vw,70px);}
+
+/* about — diagonal block */
+.about{position:relative;padding:clamp(50px,9vw,140px) clamp(20px,5vw,60px);background:var(--ink);color:var(--paper);overflow:hidden;}
+.about-big{font-family:"Syne",sans-serif;font-weight:800;font-size:clamp(2rem,7vw,5rem);line-height:.9;letter-spacing:-2px;max-width:16ch;}
+.about-body{max-width:42ch;margin:30px 0 0 auto;font-weight:300;font-size:1.1rem;}
+.mark{position:absolute;top:14%;right:8%;font-size:clamp(4rem,14vw,11rem);color:var(--accent);line-height:1;}
+
+/* cta */
+.cta{padding:clamp(50px,9vw,130px) clamp(20px,5vw,60px);}
+.cta-small{text-transform:uppercase;letter-spacing:2px;font-size:.85rem;opacity:.6;margin-bottom:14px;}
+.cta-big{font-family:"Syne",sans-serif;font-weight:800;font-size:clamp(2.4rem,9vw,7rem);line-height:.85;letter-spacing:-3px;display:inline-block;}
+.cta-big:hover{color:var(--accent);}
+
+.foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding:30px clamp(20px,5vw,60px);
+  border-top:1.5px solid var(--line);font-size:.82rem;text-transform:uppercase;letter-spacing:1px;}
+.foot a{border-bottom:1.5px solid var(--accent);}
+
+@media(max-width:760px){
+  .hero{min-height:auto;padding-bottom:120px;}
+  .big{position:static;letter-spacing:-2px;}
+  .big-2{text-align:left;}
+  .kicker{display:none;}
+  .lead,.l-a{position:static;margin-top:24px;}
+  .float-num{display:none;}
+  .p2,.p3{margin-left:0;}
+}

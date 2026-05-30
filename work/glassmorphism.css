@@ -1,0 +1,69 @@
+/* Glassmorphism demo — createdbykujo */
+:root{--ink:#0d1b2a;--glass:rgba(255,255,255,.14);--brd:rgba(255,255,255,.4);
+  --grad:linear-gradient(120deg,#7b5cff,#36d1ff 60%,#5cffd6);}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:"Outfit",system-ui,sans-serif;color:var(--ink);line-height:1.6;overflow-x:hidden;
+  background:linear-gradient(135deg,#c2e9fb,#e0c3fc 50%,#a1c4fd);min-height:100vh;}
+a{color:inherit;text-decoration:none;}img{display:block;}
+
+.bg{position:fixed;inset:0;z-index:-1;overflow:hidden;}
+.orb{position:absolute;border-radius:50%;filter:blur(60px);opacity:.65;animation:drift 20s ease-in-out infinite;}
+.o1{width:420px;height:420px;background:#7b5cff;top:-100px;left:-60px;}
+.o2{width:480px;height:480px;background:#36d1ff;bottom:-140px;right:-80px;animation-delay:-7s;}
+.o3{width:320px;height:320px;background:#ff8fd1;top:40%;left:55%;animation-delay:-13s;}
+@keyframes drift{0%,100%{transform:translate(0,0)}50%{transform:translate(40px,-40px) scale(1.1)}}
+
+.glass{background:var(--glass);border:1px solid var(--brd);backdrop-filter:blur(18px) saturate(160%);
+  -webkit-backdrop-filter:blur(18px) saturate(160%);box-shadow:0 20px 50px -20px rgba(13,27,42,.35);}
+.card{border-radius:24px;padding:30px;}
+
+/* badge */
+.cbk-badge{position:fixed;bottom:18px;left:18px;z-index:99;display:flex;align-items:center;gap:8px;
+  padding:9px 15px;border-radius:999px;font-weight:700;font-size:.82rem;
+  background:var(--glass);border:1px solid var(--brd);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  box-shadow:0 10px 30px -10px rgba(13,27,42,.4);transition:transform .2s;}
+.cbk-badge:hover{transform:translateY(-3px);}
+.cbk-badge img{height:22px;width:auto;}
+.cbk-badge b{color:#7b5cff;}
+
+/* nav */
+.nav{position:sticky;top:16px;z-index:50;width:min(1080px,92%);margin:16px auto 0;border-radius:999px;
+  display:flex;justify-content:space-between;align-items:center;padding:12px 22px;}
+.logo{font-weight:800;font-size:1.2rem;}
+.nav nav{display:flex;gap:22px;align-items:center;font-weight:500;font-size:.95rem;}
+.pill{background:var(--grad);color:#06121f;font-weight:700;padding:10px 22px;border-radius:999px;transition:transform .2s,box-shadow .2s;}
+.pill:hover{transform:translateY(-2px);box-shadow:0 12px 30px -8px rgba(123,92,255,.6);}
+.ghost{padding:10px 22px;border-radius:999px;border:1px solid var(--brd);background:var(--glass);transition:transform .2s;}
+.ghost:hover{transform:translateY(-2px);}
+
+main{width:min(1080px,92%);margin:0 auto;}
+.hero{padding:90px 0 50px;display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;}
+.eyebrow{font-weight:700;letter-spacing:1px;text-transform:uppercase;font-size:.8rem;opacity:.75;}
+.hero h1{font-size:clamp(2.6rem,7vw,5rem);font-weight:800;line-height:1.02;margin:18px 0;}
+.grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;}
+.hero p{font-size:1.15rem;max-width:46ch;opacity:.85;margin-bottom:30px;}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
+
+/* profile card */
+.profile{border-radius:24px;}
+.ptag{font-weight:700;font-size:.8rem;letter-spacing:1px;text-transform:uppercase;opacity:.7;}
+.pname{font-size:2.4rem;font-weight:800;line-height:1;margin:6px 0 4px;}
+.prole{opacity:.8;margin-bottom:20px;font-size:.95rem;}
+.skill{margin:12px 0;}
+.skill .row{display:flex;justify-content:space-between;font-weight:700;font-size:.9rem;margin-bottom:6px;}
+.bar{height:10px;border-radius:999px;background:rgba(255,255,255,.35);overflow:hidden;}
+.bar i{display:block;height:100%;background:var(--grad);border-radius:999px;}
+.bar i.w92{width:92%;}.bar i.w88{width:88%;}.bar i.w80{width:80%;}.bar i.w75{width:75%;}
+
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;padding:40px 0;}
+.features .step{display:inline-grid;place-items:center;width:42px;height:42px;border-radius:50%;
+  font-weight:800;background:var(--grad);color:#06121f;}
+.features h3{margin:14px 0 8px;font-weight:700;font-size:1.25rem;}
+.features p{opacity:.85;}
+
+/* work rows */
+.work{padding:40px 0;}
+.work-h{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;margin-bottom:22px;}
+.prow{border-radius:18px;display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:22px 28px;margin-bottom:14px;transition:transform .2s,box-shadow .2s;}
+.prow:hover{transform:translat

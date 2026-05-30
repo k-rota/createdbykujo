@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; img-src 'self' data:; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; base-uri 'self'; frame-ancestors 'none';" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="description" content="createdbykujo — portfolio in a glassmorphism style. Custom websites by Kujo." />
+  <title>createdbykujo — glassmorphism portfolio</title>
+  <link rel="icon" type="image/png" href="../assets/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;800&display=swap" />
+  <link rel="stylesheet" href="glassmorphism.css" />
+</head>
+<body>
+  <div class="bg" aria-hidden="true"><span class="orb o1"></span><span class="orb o2"></span><span class="orb o3"></span></div>
+
+  <a class="cbk-badge" href="../index.html" title="Back to createdbykujo">
+    <img src="../assets/logo.png" alt="" /> created<b>by</b>kujo
+  </a>
+
+  <header class="nav glass">
+    <span class="logo">createdbykujo</span>
+    <nav>
+      <a href="#work">Work</a>
+      <a href="#process">Process</a>
+      <a href="../index.html#contact" class="pill">Hire me</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">Portfolio / style no.02 — glassmorphism</span>
+        <h1>Soft surfaces,<br /><span class="grad">sharp builds.</span></h1>
+        <p>I'm Kujo — a software-engineering grad who builds calm, layered interfaces that still load fast and lock down tight. This is one of four portfolios, each in a different design language.</p>
+        <div class="hero-btns">
+          <a href="#work" class="pill">View work</a>
+          <a href="../index.html#contact" class="ghost">Start a project</a>
+        </div>
+      </div>
+      <div class="glass card profile">
+        <span class="ptag">// developer</span>
+        <h2 class="pname">Kujo</h2>
+        <p class="prole">custom web &middot; front-end &amp; secure back-end</p>
+        <div class="skill"><div class="row"><span>TypeScript</span><b>92%</b></div><div class="bar"><i class="w92"></i></div></div>
+        <div class="skill"><div class="row"><span>CSS &amp; motion</span><b>88%</b></div><div class="bar"><i class="w88"></i></div></div>
+        <div class="skill"><div class="row"><span>Node &amp; APIs</span><b>80%</b></div><div class="bar"><i class="w80"></i></div></div>
+        <div class="skill"><div class="row"><span>Security basics</span><b>75%</b></div><div class="bar"><i class="w75"></i></div></div>
+      </div>
+    </section>
+
+    <section id="process" class="features">
+      <article class="glass card"><span class="step">01</span><h3>Discover</h3><p>We figure out who it's for and what it has to do before a line of code.</p></article>
+      <article class="glass card"><span class="step">02</span><h3>Design &amp; build</h3><p>Custom layout and front-end, wired to a clean, typed back-end.</p></article>
+      <article class="glass card"><span class="step">03</span><h3>Harden &amp; launch</h3><p>Rate limits, input checks, a tight CSP — then it ships.</p></article>
+    </section>
+
+    <section id="work" class="work">
+      <h2 class="work-h">Selected work</h2>
+      <a class="glass card prow" href="../templates/photography.html">
+        <div><span class="pnum">01</span><h3>Example Studio</h3></div>
+        <p class="ptype">photography &middot; gallery + inquiry</p>
+      </a>
+      <a class="glass card prow" href="../templates/restaurant.html">
+        <div><span class="pnum">02</span><h3>Mock Kitchen</h3></div>
+        <p class="ptype">restaurant &middot; menu + booking</p>
+      </a>
+      <a class="glass card prow" href="../templates/cafe.html">
+        <div><span class="pnum">03</span><h3>Example Cafe</h3></div>
+        <p class="ptype">cafe &middot; menu + online ordering</p>
+      </a>
+    </section>
+
+    <section id="cta" class="cta glass card">
+      <h2>Want one this calm?</h2>
+      <p>A glassy, fast, secure site with your name on it.</p>
+      <a href="../index.html#contact" class="pill big">Build it with createdbykujo</a>
+    </section>
+  </main>
+
+  <footer class="foot">One of four portfolio styles &middot; back to <a href="../index.html">createdbykujo</a></footer>
+</body>
+</html>
