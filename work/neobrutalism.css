@@ -1,4 +1,4 @@
-/* Neobrutalism demo — createdbykujo */
+/* Neobrutalism demo, createdbykujo */
 :root{
   --yellow:#ffe600; --pink:#ff5da2; --cyan:#00e0ff; --black:#111; --paper:#fef7e8;
   --shadow:6px 6px 0 var(--black); --shadow-lg:10px 10px 0 var(--black);
@@ -43,7 +43,7 @@ h1,h2,h3,.logo{font-family:"Archivo Black",sans-serif;text-transform:uppercase;l
 .hero p{font-size:1.15rem;max-width:46ch;margin:34px 0 34px;font-weight:700;}
 .hero-btns{display:flex;gap:16px;flex-wrap:wrap;}
 
-/* marquee — seamless loop: two identical items, track shifts exactly one item width */
+/* marquee, seamless loop: two identical items, track shifts exactly one item width */
 .marquee{overflow:hidden;border-block:4px solid var(--black);background:var(--black);
   color:var(--yellow);font-family:"Archivo Black",sans-serif;padding:14px 0;}
 .m-item{display:inline-block;white-space:nowrap;padding-left:100%;animation:scroll 18s linear infinite;}

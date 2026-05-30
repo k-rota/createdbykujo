@@ -1,5 +1,5 @@
 /* ============================================================
-   createdbykujo — front-end interactions (TypeScript)
+   createdbykujo, front-end interactions (TypeScript)
    ============================================================ */
 
 /** Endpoint for the contact backend (configure in server/.env / deploy). */
@@ -178,7 +178,7 @@ form?.addEventListener("submit", async (ev) => {
       body: JSON.stringify(data),
     });
     if (!res.ok) throw new Error(`status ${res.status}`);
-    setStatus("Message sent — talk soon! 🚀", "ok");
+    setStatus("Message sent, talk soon! 🚀", "ok");
     form.reset();
   } catch {
     // Backend not configured yet? fall back to email client.

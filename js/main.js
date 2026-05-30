@@ -1,6 +1,6 @@
 "use strict";
 /* ============================================================
-   createdbykujo — front-end interactions (TypeScript)
+   createdbykujo, front-end interactions (TypeScript)
    ============================================================ */
 /** Endpoint for the contact backend (configure in server/.env / deploy). */
 const CONTACT_ENDPOINT = "/api/contact";

@@ -8,8 +8,8 @@
   <meta http-equiv="Content-Security-Policy"
         content="default-src 'self'; img-src 'self' data:; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none';" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
-  <meta name="description" content="createdbykujo — custom websites built by Kujo, a computer information systems software engineer who loves building things." />
-  <title>createdbykujo — custom websites that don't look like everyone else's</title>
+  <meta name="description" content="createdbykujo, custom websites built by Kujo, a computer information systems software engineer who loves building things." />
+  <title>createdbykujo, custom websites that don't look like everyone else's</title>
   <link rel="icon" type="image/png" href="assets/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -45,7 +45,7 @@
   </header>
 
   <main id="top">
-    <!-- HERO — typographic wordmark as the centerpiece -->
+    <!-- HERO: typographic wordmark as the centerpiece -->
     <section class="hero">
       <h1 class="wordmark" aria-label="createdbykujo">
         <span class="wm-type" data-reveal>
@@ -55,9 +55,8 @@
         </span>
       </h1>
       <p class="hero-sub" data-reveal>
-        Hey, I'm Kujo. <strong>createdbykujo</strong> is my studio for crafting
-        custom, fast, and slightly-unconventional websites for businesses or
-        people who'd rather stand out than blend in.
+        Hey, I'm Kujo. I build websites that don't look like every other
+        site on the internet. Based in Michigan.
       </p>
       <div class="hero-cta" data-reveal>
         <a href="#contact" class="btn btn-primary">start a project</a>
@@ -65,7 +64,7 @@
       </div>
       <div class="stat-row" data-reveal>
         <div class="stat"><b data-count="1">0</b><span>name</span></div>
-        <div class="stat"><b data-count="100">0</b><span>percent custom code</span></div>
+        <div class="stat"><b><span class="count" data-count="100">0</span><span class="pct">%</span></b><span>custom code</span></div>
         <div class="stat"><b>&infin;</b><span>options</span></div>
       </div>
     </section>
@@ -76,27 +75,23 @@
       <div class="about-grid">
         <div class="glass card about-bio" data-reveal>
           <p>
-            I'm a recent graduate in <strong>Computer Information Systems —
+            I'm a recent graduate in <strong>Computer Information Systems,
             Software Engineering</strong>, and an unapologetic builder. Give me
-            an empty editor and a problem and I'm happy.
+            an empty editor and an idea and I'm good.
           </p>
+          <br>
           <p>
-            createdbykujo started because I kept noticing the same templated,
-            forgettable websites everywhere. I'd rather bend the rules, mix
-            motion with restraint, and ship something that actually feels like
-            <em>you</em> — while keeping it fast and secure under the hood.
-          </p>
-          <p>
-            When I'm not shipping, I'm tearing apart how something works just to
-            rebuild it better.
+            <strong>createdbykujo</strong> started because I kept noticing the same exact
+            websites everywhere. I'd rather bend the rules, do something
+            that's new, and ship something that actually feels like <em>you.</em>
           </p>
         </div>
         <div class="glass card about-stack" data-reveal>
           <h3>tools I reach for</h3>
           <ul class="chips">
-            <li>TypeScript</li><li>HTML</li><li>CSS</li><li>Node.js</li>
-            <li>React</li><li>SQL</li><li>Git</li><li>APIs</li>
-            <li>Security basics</li><li>UI/UX</li>
+            <li>TypeScript</li><li>JavaScript</li><li>HTML</li><li>CSS</li>
+            <li>React</li><li>SQL</li><li>Node.js</li><li>APIs</li>
+            <li>Git</li>
           </ul>
           <h3>how I work</h3>
           <p class="muted">
@@ -110,29 +105,32 @@
     <!-- SERVICES -->
     <section id="services" class="section">
       <h2 class="section-title" data-reveal><span class="num">02</span> services &amp; pricing</h2>
-      <p class="section-lead" data-reveal>Starting points, not handcuffs — every project gets a custom quote.</p>
+      <p class="section-lead" data-reveal>Starting prices. Every project gets a real quote. Monthly care plans available for all builds.</p>
       <div class="pricing-grid">
         <article class="glass card price-card tilt" data-reveal>
           <h3>The Starter</h3>
-          <p class="price">$350<span>+</span></p>
+          <p class="price">$600<span>+</span></p>
+          <p class="care">+ $50/mo care plan (optional)</p>
           <p class="muted">A sharp one-page site to put you on the map.</p>
           <ul class="feature-list">
             <li>Single-page custom design</li>
             <li>Mobile responsive</li>
-            <li>Contact form</li>
-            <li>Basic SEO + analytics</li>
+            <li>Hosting setup &amp; launch</li>
+            <li>Meta tags &amp; alt text for search</li>
           </ul>
           <a href="#contact" class="btn btn-ghost full" data-plan="The Starter">Select</a>
         </article>
         <article class="glass card price-card tilt" data-reveal>
           <h3>The Studio</h3>
-          <p class="price">$850<span>+</span></p>
+          <p class="price">$1,500<span>+</span></p>
+          <p class="care">+ $75/mo care plan (optional)</p>
           <p class="muted">A multi-page site with personality and motion.</p>
           <ul class="feature-list">
             <li>Up to 5 custom pages</li>
             <li>Animations &amp; interactions</li>
-            <li>CMS so you can edit content</li>
-            <li>Performance &amp; security hardening</li>
+            <li>Contact form with email delivery</li>
+            <li>Performance optimization</li>
+            <li>Search-ready setup</li>
           </ul>
           <a href="#contact" class="btn btn-ghost full" data-plan="The Studio">Select</a>
         </article>
@@ -140,22 +138,24 @@
           <span class="badge">most popular</span>
           <h3>The Custom</h3>
           <p class="price">let's talk</p>
-          <p class="muted">Web apps, dashboards, integrations — the weird stuff.</p>
+          <p class="care">+ custom care plan</p>
+          <p class="muted">Web apps, dashboards, integrations, the weird stuff.</p>
           <ul class="feature-list">
-            <li>Full-stack builds</li>
-            <li>Auth &amp; databases</li>
-            <li>Third-party integrations</li>
-            <li>Ongoing support</li>
+            <li>Multi-page builds with complex layouts</li>
+            <li>Third-party integrations (booking, ordering, payments)</li>
+            <li>Custom interactive features</li>
+            <li>Ongoing partnership</li>
           </ul>
           <a href="#contact" class="btn btn-primary full" data-plan="The Custom">Select</a>
         </article>
       </div>
+      <p class="pricing-note" data-reveal>Every build includes hosting setup, a domain, and a launch checklist. Monthly care plans cover hosting, updates, and ongoing changes.</p>
     </section>
 
     <!-- WORK -->
     <section id="work" class="section">
       <h2 class="section-title" data-reveal><span class="num">03</span> selected work</h2>
-      <p class="section-lead" data-reveal>One studio, many voices. Each card is a live demo in a totally different design language — same createdbykujo DNA underneath.</p>
+      <p class="section-lead" data-reveal>I don't do one look. Each of these is a live demo built in a totally different design language.</p>
       <div class="work-grid">
         <a class="word-card" href="work/neobrutalism.html" data-reveal>
           <div class="wt wt-neo"><span>Neobrutalism</span></div>

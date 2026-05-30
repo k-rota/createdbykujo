@@ -1,7 +1,7 @@
 {
   "name": "createdbykujo",
   "version": "1.0.0",
-  "description": "Personal website for createdbykujo — custom websites by Kujo.",
+  "description": "Personal website for createdbykujo, custom websites by Kujo.",
   "type": "module",
   "scripts": {
     "build": "tsc -p tsconfig.json",

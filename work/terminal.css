@@ -1,4 +1,4 @@
-/* Retro terminal demo — createdbykujo */
+/* Retro terminal demo, createdbykujo */
 :root{--green:#33ff77;--green-dim:#1f9e4a;--amber:#ffcf4d;--bg:#020a04;}
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:"IBM Plex Mono",monospace;background:var(--bg);color:var(--green);line-height:1.6;

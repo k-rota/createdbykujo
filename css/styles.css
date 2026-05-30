@@ -1,5 +1,5 @@
 /* ============================================================
-   createdbykujo — editorial / organic-tech typographic theme
+   createdbykujo, editorial / organic-tech typographic theme
    Palette pulled straight from the leaf-circuit logo:
    forest green ink, gold accent, warm cream paper.
    Type-led on purpose. A little unconventional by design.
@@ -9,7 +9,7 @@
   --paper:     #f3ecda;   /* warm cream background        */
   --paper-2:   #ece2c9;   /* slightly deeper cream        */
   --card:      #f8f3e6;   /* raised card surface          */
-  --ink:       #213a2a;   /* forest green — primary text  */
+  --ink:       #213a2a;   /* forest green, primary text  */
   --ink-2:     #2e5339;   /* lighter green                */
   --muted:     #6b7a64;   /* sage muted text              */
   --gold:      #b3822b;   /* logo gold                    */
@@ -68,7 +68,7 @@ img { display: block; }
   -webkit-mask-image: radial-gradient(ellipse at 50% 0%, #000 25%, transparent 75%);
 }
 
-/* cursor glow — soft gold */
+/* cursor glow, soft gold */
 .cursor-glow {
   position: fixed; top: 0; left: 0; width: 320px; height: 320px;
   margin: -160px 0 0 -160px; border-radius: 50%; pointer-events: none; z-index: -1;
@@ -124,7 +124,7 @@ main { width: min(1120px, 90%); margin: 0 auto; }
 .card { padding: 30px; }
 
 /* ============================================================
-   HERO — the typographic centerpiece.
+   HERO, the typographic centerpiece.
    "created / by / kujo" is set as a tall stacked wordmark,
    mixing serif + mono, with the leaf standing in as punctuation.
    ============================================================ */
@@ -176,7 +176,8 @@ main { width: min(1120px, 90%); margin: 0 auto; }
 
 .stat-row { display: flex; gap: 48px; margin-top: 60px; flex-wrap: wrap; }
 .stat b { font-family: var(--serif); font-size: 2.6rem; font-weight: 600; display: block; color: var(--ink); }
-.stat span { color: var(--muted); font-family: var(--mono); font-size: .76rem; text-transform: uppercase; letter-spacing: 1px; }
+.stat .pct { font-size: .72em; color: var(--ink); font-family: var(--serif); margin-left: -0.02em; }
+.stat > span { color: var(--muted); font-family: var(--mono); font-size: .76rem; text-transform: uppercase; letter-spacing: 1px; }
 
 /* ---------- buttons ---------- */
 .btn {
@@ -211,6 +212,7 @@ main { width: min(1120px, 90%); margin: 0 auto; }
 .price-card h3 { font-family: var(--serif); font-size: 1.5rem; font-weight: 600; }
 .price { font-family: var(--serif); font-size: 2.6rem; font-weight: 600; margin: 10px 0 4px; color: var(--gold); -webkit-text-stroke: 1px var(--ink); }
 .price span { font-size: 1rem; -webkit-text-stroke: 0; color: var(--ink); }
+.care { color: var(--muted); font-size: .76rem; margin: 0 0 8px; }
 .price-card .muted { min-height: 46px; }
 .feature-list { list-style: none; margin: 18px 0 24px; flex: 1; }
 .feature-list li { padding: 9px 0 9px 24px; position: relative; border-bottom: 1px dashed var(--line); font-size: .92rem; }
@@ -218,7 +220,7 @@ main { width: min(1120px, 90%); margin: 0 auto; }
 .price-card.featured { background: var(--ink); color: var(--paper); box-shadow: var(--shadow); }
 .price-card.featured h3, .price-card.featured .price span { color: var(--paper); }
 .price-card.featured .price { color: var(--gold-2); -webkit-text-stroke: 1px var(--gold-2); }
-.price-card.featured .muted { color: #c7d2bd; }
+.price-card.featured .muted, .price-card.featured .care { color: #c7d2bd; }
 .price-card.featured .feature-list li { border-color: rgba(255,255,255,.15); }
 .price-card.featured .btn-primary { background: var(--gold); border-color: var(--gold); color: var(--ink); }
 .badge {
@@ -226,6 +228,7 @@ main { width: min(1120px, 90%); margin: 0 auto; }
   color: var(--ink); font-family: var(--mono); font-size: .68rem; font-weight: 700;
   text-transform: uppercase; letter-spacing: 1px; padding: 5px 12px; border: 1.5px solid var(--ink);
 }
+.pricing-note { margin: 28px auto 0; max-width: 64ch; text-align: center; color: var(--muted); font-size: .9rem; }
 
 /* ---------- work / template word-cards ---------- */
 .work-grid { display: grid; gap: 22px; grid-template-columns: repeat(2,1fr); }
@@ -247,7 +250,7 @@ main { width: min(1120px, 90%); margin: 0 auto; }
 .work-arrow { font-family: var(--mono); color: var(--gold); font-weight: 700; transition: transform .2s; }
 .word-card:hover .work-arrow { transform: translate(3px,-3px); }
 
-/* —— work styles —— */
+/* work styles */
 .wt-neo { background: #ffe44d; }
 .wt-neo span {
   font-family: var(--grot); font-weight: 700; text-transform: uppercase;
@@ -275,7 +278,7 @@ main { width: min(1120px, 90%); margin: 0 auto; }
   border-bottom: 4px solid #ff4d2e; padding-bottom: 4px;
 }
 
-/* —— template styles —— */
+/* template styles */
 .wt-cafe { background: #f3e3cf; }
 .wt-cafe span { font-family: var(--serif); font-weight: 600; font-size: 2rem; color: #6f4a24; }
 .wt-gym { background: #11140f; }
