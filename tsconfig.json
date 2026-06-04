@@ -9,7 +9,7 @@
     "strict": true,
     "noUnusedLocals": true,
     "noImplicitAny": true,
-    "sourceMap": true,
+    "sourceMap": false,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true

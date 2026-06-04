@@ -1,4 +1,3 @@
-"use strict";
 /* ============================================================
    createdbykujo, front-end interactions (TypeScript)
    ============================================================ */
@@ -143,8 +142,9 @@ form?.addEventListener("submit", async (ev) => {
         email: sanitize(String(fd.get("email") ?? "")),
         message: sanitize(String(fd.get("message") ?? "")),
         plan: sanitize(String(fd.get("plan") ?? "")),
-        company: String(fd.get("company") ?? ""),
+        company: String(fd.get("company") ?? ""), // honeypot, not sanitized/used
     };
+    // honeypot tripped -> silently drop
     if (data.company) {
         return;
     }
@@ -155,7 +155,7 @@ form?.addEventListener("submit", async (ev) => {
     const btn = form.querySelector('button[type="submit"]');
     if (btn) {
         btn.disabled = true;
-        btn.textContent = "Sending...";
+        btn.textContent = "Sending…";
     }
     setStatus("", "");
     try {
@@ -178,3 +178,4 @@ form?.addEventListener("submit", async (ev) => {
         }
     }
 });
+export {};

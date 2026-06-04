@@ -180,7 +180,7 @@ form?.addEventListener("submit", async (ev) => {
     if (successEl) successEl.hidden = false;
   } catch {
     setStatus("Something went wrong. Try emailing me directly at kujo@createdbykujo.com.", "bad");
-    if (btn) { btn.disabled = false; btn.textContent = "Send it →"; }
+    if (btn) { btn.disabled = false; btn.textContent = "Send it"; }
   }
 });
 
