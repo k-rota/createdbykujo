@@ -332,8 +332,12 @@ input:focus, select:focus, textarea:focus { outline: none; background: #fff; box
 select.just-set { background: #fff; box-shadow: 5px 5px 0 var(--gold); border-color: var(--gold); }
 .err { color: #b5402b; font-family: var(--mono); font-size: .76rem; min-height: 14px; margin-top: 5px; }
 .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.hp-check { display: none; }
 .form-status { margin-top: 14px; font-family: var(--mono); font-size: .88rem; min-height: 20px; }
 .form-status.ok { color: var(--ink-2); } .form-status.bad { color: #b5402b; }
+.contact-success { display: flex; flex-direction: column; justify-content: center; }
+.contact-success h3 { color: var(--ink-2); margin: 0 0 8px; }
+.contact-success p { color: var(--ink); margin: 0; }
 
 /* ---------- footer ---------- */
 .footer {

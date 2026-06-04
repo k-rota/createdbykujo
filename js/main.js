@@ -2,8 +2,6 @@
 /* ============================================================
    createdbykujo, front-end interactions (TypeScript)
    ============================================================ */
-/** Endpoint for the contact backend (configure in server/.env / deploy). */
-const CONTACT_ENDPOINT = "/api/contact";
 /* ---------- footer year ---------- */
 const yearEl = document.getElementById("year");
 if (yearEl)
@@ -136,6 +134,7 @@ function setStatus(msg, kind) {
     statusEl.textContent = msg;
     statusEl.className = `form-status ${kind}`;
 }
+const successEl = document.getElementById("contact-success");
 form?.addEventListener("submit", async (ev) => {
     ev.preventDefault();
     const fd = new FormData(form);
@@ -147,8 +146,6 @@ form?.addEventListener("submit", async (ev) => {
         company: String(fd.get("company") ?? ""),
     };
     if (data.company) {
-        setStatus("Thanks! I'll be in touch.", "ok");
-        form.reset();
         return;
     }
     if (!validate(data)) {
@@ -162,24 +159,19 @@ form?.addEventListener("submit", async (ev) => {
     }
     setStatus("", "");
     try {
-        const res = await fetch(CONTACT_ENDPOINT, {
+        const res = await fetch(form.action, {
             method: "POST",
             headers: { "Content-Type": "application/json", "Accept": "application/json" },
-            credentials: "same-origin",
-            body: JSON.stringify(data),
+            body: JSON.stringify(Object.fromEntries(fd.entries())),
         });
         if (!res.ok)
             throw new Error(`status ${res.status}`);
-        setStatus("Message sent - talk soon!", "ok");
-        form.reset();
+        form.hidden = true;
+        if (successEl)
+            successEl.hidden = false;
     }
     catch {
-        setStatus("Couldn't reach the server. Opening your email app instead...", "bad");
-        const subject = encodeURIComponent(`createdbykujo inquiry from ${data.name}`);
-        const body = encodeURIComponent(`${data.message}\n\nPlan: ${data.plan}\nReply to: ${data.email}`);
-        window.location.href = `mailto:kjsierota@gmail.com?subject=${subject}&body=${body}`;
-    }
-    finally {
+        setStatus("Something went wrong. Try emailing me directly at kujo@createdbykujo.com.", "bad");
         if (btn) {
             btn.disabled = false;
             btn.textContent = "Send it";

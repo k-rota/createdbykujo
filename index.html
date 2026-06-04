@@ -6,7 +6,7 @@
   <!-- Security: lock down where resources can load from. Fonts are the only
        third-party origin allowed, and only Google's font hosts at that. -->
   <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; img-src 'self' data:; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none';" />
+        content="default-src 'self'; img-src 'self' data:; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; connect-src 'self' https://api.web3forms.com; base-uri 'self'; form-action 'self' https://api.web3forms.com; frame-ancestors 'none';" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta name="description" content="createdbykujo, custom websites built by Kujo, a computer information systems software engineer who loves building things." />
   <title>createdbykujo, custom websites that don't look like everyone else's</title>
@@ -228,7 +228,10 @@
           </div>
           <p class="muted small">Your details are sent over an encrypted, rate-limited endpoint and never shared.</p>
         </div>
-        <form id="contact-form" class="glass card contact-form" novalidate data-reveal>
+        <form id="contact-form" class="glass card contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate data-reveal>
+          <input type="hidden" name="access_key" value="b5ca369f-7d30-4951-988a-4e3b30dc0ef1" />
+          <input type="hidden" name="from_name" value="createdbykujo Contact Form" />
+          <input type="hidden" name="subject" value="New project inquiry from createdbykujo.dev" />
           <div class="field">
             <label for="name">Name</label>
             <input id="name" name="name" type="text" maxlength="80" autocomplete="name" required />
@@ -257,9 +260,15 @@
           <div class="hp" aria-hidden="true">
             <label>Leave this empty<input type="text" name="company" tabindex="-1" autocomplete="off" /></label>
           </div>
+          <!-- web3forms honeypot (hidden via CSS class for CSP compliance) -->
+          <input type="checkbox" name="botcheck" class="hp-check" tabindex="-1" autocomplete="off" />
           <button type="submit" class="btn btn-primary full">Send it &rarr;</button>
           <p class="form-status" role="status" aria-live="polite"></p>
         </form>
+        <div id="contact-success" class="glass card contact-form contact-success" data-reveal hidden>
+          <h3>Got it.</h3>
+          <p>I'll get back to you within a day or two.</p>
+        </div>
       </div>
     </section>
   </main>

@@ -19,7 +19,7 @@ npm run server         # builds + starts the backend on :3000
 
 Then open http://localhost:3000. With no SMTP configured, submissions are logged to the console (so you don't lose leads while testing). Add SMTP creds in `.env` to actually receive emails.
 
-> Just want to preview the look without a backend? Run `npm run build`, open `index.html` directly, the form will gracefully fall back to opening your email client if the API isn't reachable.
+> The contact form posts to [Web3Forms](https://web3forms.com), so it works on static hosting with no backend running. Put your access key in the `access_key` hidden input in `index.html` (replace `YOUR_WEB3FORMS_ACCESS_KEY`). On success the form is swapped for a confirmation message; on failure it shows an error asking the visitor to email directly.
 
 ## Security measures (already wired in)
 - **CSP** on both the page (meta tag) and the server (helmet), locks resources to same-origin.
