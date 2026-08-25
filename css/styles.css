@@ -101,6 +101,7 @@ img { display: block; }
 .brand b { color: var(--gold); font-weight: 700; }
 .nav-links { display: flex; gap: 28px; align-items: center; font-family: var(--mono); font-size: .82rem; text-transform: lowercase; }
 .nav-links a { color: var(--ink); transition: color .2s; }
+.nav-links a:not(.nav-cta) { padding: 8px 0; }
 .nav-links a:hover { color: var(--gold); }
 .nav-cta {
   padding: 8px 18px; border: 1.5px solid var(--ink);
@@ -108,7 +109,7 @@ img { display: block; }
   transition: background .2s, color .2s;
 }
 .nav-cta:hover { background: var(--gold-2); border-color: var(--gold-2); color: var(--ink) !important; }
-.menu-toggle { display: none; background: none; border: 0; flex-direction: column; gap: 5px; cursor: pointer; }
+.menu-toggle { display: none; background: none; border: 0; flex-direction: column; gap: 5px; cursor: pointer; padding: 14px; margin: -14px; }
 .menu-toggle span { width: 26px; height: 2px; background: var(--ink); transition: .3s; }
 
 /* ---------- layout ---------- */
@@ -175,7 +176,8 @@ main { width: min(1120px, 90%); margin: 0 auto; }
 .hero-cta { display: flex; gap: 16px; flex-wrap: wrap; }
 
 .stat-row { display: flex; gap: 48px; margin-top: 60px; flex-wrap: wrap; }
-.stat b { font-family: var(--serif); font-size: 2.6rem; font-weight: 600; display: block; color: var(--ink); }
+.stat { flex-shrink: 0; }
+.stat b { font-family: var(--serif); font-size: 2.6rem; font-weight: 600; display: block; color: var(--ink); white-space: nowrap; }
 .stat .pct { font-size: .72em; color: var(--ink); font-family: var(--serif); margin-left: -0.02em; }
 .stat > span { color: var(--muted); font-family: var(--mono); font-size: .76rem; text-transform: uppercase; letter-spacing: 1px; }
 
