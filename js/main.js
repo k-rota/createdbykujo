@@ -142,8 +142,13 @@ form?.addEventListener("submit", async (ev) => {
             headers: { "Content-Type": "application/json", "Accept": "application/json" },
             body: JSON.stringify(Object.fromEntries(fd.entries())),
         });
+        // Web3Forms answers 200 with { success: false } when it rejects a
+        // submission, so res.ok on its own would report a false success.
         let body = null;
-        try { body = await res.json(); } catch { /* non-JSON response */ }
+        try {
+            body = await res.json();
+        }
+        catch { /* non-JSON response */ }
         if (!res.ok || !body?.success) {
             console.error("Contact form submission rejected", { status: res.status, body });
             throw new Error(`status ${res.status}${body ? `, success=${body.success}` : ""}`);
@@ -157,7 +162,7 @@ form?.addEventListener("submit", async (ev) => {
         setStatus("Something went wrong sending that — please email me directly at kujo@createdbykujo.com.", "bad");
         if (btn) {
             btn.disabled = false;
-            btn.textContent = "Send it";
+            btn.textContent = "Send it →";
         }
     }
 });
