@@ -30,28 +30,6 @@ revealEls.forEach((el, i) => {
     el.style.transitionDelay = `${Math.min(i * 60, 300)}ms`;
     io.observe(el);
 });
-/* ---------- animated counters ---------- */
-const counters = document.querySelectorAll("[data-count]");
-const countIO = new IntersectionObserver((entries) => {
-    entries.forEach((e) => {
-        if (!e.isIntersecting)
-            return;
-        const el = e.target;
-        const target = Number(el.dataset.count ?? "0");
-        const dur = 1200;
-        const start = performance.now();
-        const tick = (now) => {
-            const p = Math.min((now - start) / dur, 1);
-            const eased = 1 - Math.pow(1 - p, 3);
-            el.textContent = String(Math.round(target * eased)) + (el.dataset.suffix ?? "");
-            if (p < 1)
-                requestAnimationFrame(tick);
-        };
-        requestAnimationFrame(tick);
-        countIO.unobserve(el);
-    });
-}, { threshold: 0.6 });
-counters.forEach((c) => countIO.observe(c));
 /* ---------- cursor glow ---------- */
 const glow = document.querySelector(".cursor-glow");
 if (glow && window.matchMedia("(pointer:fine)").matches) {
@@ -164,14 +142,19 @@ form?.addEventListener("submit", async (ev) => {
             headers: { "Content-Type": "application/json", "Accept": "application/json" },
             body: JSON.stringify(Object.fromEntries(fd.entries())),
         });
-        if (!res.ok)
-            throw new Error(`status ${res.status}`);
+        let body = null;
+        try { body = await res.json(); } catch { /* non-JSON response */ }
+        if (!res.ok || !body?.success) {
+            console.error("Contact form submission rejected", { status: res.status, body });
+            throw new Error(`status ${res.status}${body ? `, success=${body.success}` : ""}`);
+        }
         form.hidden = true;
         if (successEl)
             successEl.hidden = false;
     }
-    catch {
-        setStatus("Something went wrong. Try emailing me directly at kujo@createdbykujo.com.", "bad");
+    catch (err) {
+        console.error("Contact form error:", err);
+        setStatus("Something went wrong sending that — please email me directly at kujo@createdbykujo.com.", "bad");
         if (btn) {
             btn.disabled = false;
             btn.textContent = "Send it";

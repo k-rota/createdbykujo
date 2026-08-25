@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Security: lock down where resources can load from. Fonts are the only
+       third-party origin allowed, and only Google's font hosts at that. -->
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; img-src 'self' data:; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; connect-src 'self' https://api.web3forms.com; base-uri 'self'; form-action 'self' https://api.web3forms.com; object-src 'none'; frame-ancestors 'none';" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="description" content="Privacy policy for createdbykujo, custom websites built by Kujo." />
+  <title>privacy policy — createdbykujo</title>
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Space+Grotesk:wght@400;500;700&family=Space+Mono:ital,wght@0,400;0,700;1,700&display=swap" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- animated background blobs -->
+  <div class="aurora" aria-hidden="true">
+    <span class="blob b1"></span>
+    <span class="blob b2"></span>
+    <span class="blob b3"></span>
+    <div class="grid-overlay"></div>
+  </div>
+
+  <!-- custom cursor glow -->
+  <div class="cursor-glow" aria-hidden="true"></div>
+
+  <header class="nav glass">
+    <a class="brand" href="index.html#top">
+      <img src="assets/logo.png" alt="createdbykujo logo" width="17" height="32" />
+      <span>created<b>by</b>kujo</span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html#about">about</a>
+      <a href="index.html#work">work</a>
+      <a href="index.html#design-demos">range</a>
+      <a href="index.html#contact" class="nav-cta">hire me</a>
+    </nav>
+    <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main id="top">
+    <section class="section">
+      <h1 class="section-title" data-reveal>privacy policy</h1>
+      <p class="legal-meta" data-reveal>Last updated: TODO</p>
+      <div class="glass card prose" data-reveal>
+        <!-- TODO: replace this placeholder with the real privacy policy content. -->
+        <p>TODO — privacy policy content goes here.</p>
+      </div>
+      <a href="index.html#top" class="back-home">&larr; back to home</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <img src="assets/logo.png" alt="" width="16" height="30" />
+    <p>&copy; <span id="year"></span> createdbykujo &middot; built from scratch, by Kujo.</p>
+    <nav class="footer-legal" aria-label="Legal">
+      <a href="privacy.html">privacy</a>
+      <a href="terms.html">terms</a>
+    </nav>
+    <a href="#top" class="to-top">back to top &uarr;</a>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
