@@ -25,19 +25,12 @@ content — your call on how to handle it).
       (e.g. "no templates") could word-wrap mid-phrase at narrow widths
       (fixed so the row wraps instead of the text breaking). Commit
       `760f859`.
-
-## Needs your decision (not missing content — a real finding)
-
-- [ ] **NEEDS DECISION** — The final privacy/terms copy uses
-      `kujo@createdbykujo.dev` as the contact/data-request address (3
-      places: "Who this is," "What you can ask for," both footer lines).
-      Confirmed via DNS (two resolvers) that `createdbykujo.dev` has
-      **no MX record** — it cannot receive email at all. `createdbykujo.com`
-      is the domain actually wired to your Workspace inbox. Shipped the
-      copy verbatim as instructed, but a real privacy/deletion request
-      sent to that address right now goes nowhere. Fix is either: change
-      the address in both pages to `.com`, or actually stand up mail on
-      `.dev` (see DNS item below) — your call, not mine to silently pick.
+- [x] **DONE** — Legal-page contact email fixed to `kujo@createdbykujo.com`
+      in both `privacy.html` and `terms.html` (you confirmed `.com` is
+      correct). Domain-name references — meta description, canonical URL,
+      "Effective ... Applies to createdbykujo.dev", "createdbykujo.dev is
+      operated by" — correctly left as `.dev` since that's the real site
+      domain; only the `mailto:` addresses changed. Commit `a8d4af1`.
 
 ## Content needed from you (still blocked)
 
@@ -77,10 +70,11 @@ content — your call on how to handle it).
 
 - [ ] **BLOCKED** — `createdbykujo.dev` has no MX, no SPF, no DMARC —
       can't receive mail at all. `createdbykujo.com` has working MX+SPF,
-      no DMARC. Decide where mail should actually live, then DNS needs
-      to match wherever the Web3Forms dashboard is configured to send —
-      this is now the same underlying issue as the privacy/terms email
-      address above, not a separate problem.
+      no DMARC. Since you've confirmed `.com` is the real contact address
+      (site copy now matches), this is mostly a "leave `.dev` mail-less on
+      purpose" non-issue — the one open question left is the Web3Forms
+      dashboard item above: confirm that access key actually notifies the
+      `.com` address, not `.dev`.
 - [ ] **BLOCKED** — Neither domain publishes DMARC. Not currently
       blocking anything (no policy = no enforcement), but adding
       `_dmarc.createdbykujo.com` with at least `v=DMARC1; p=none;` would
