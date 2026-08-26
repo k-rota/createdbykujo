@@ -130,11 +130,6 @@ main { width: min(1120px, 90%); margin: 0 auto; }
    mixing serif + mono, with the leaf standing in as punctuation.
    ============================================================ */
 .hero { padding: 70px 0 40px; }
-.eyebrow {
-  font-family: var(--mono); color: var(--gold); font-weight: 700;
-  letter-spacing: 2px; text-transform: uppercase; font-size: .78rem;
-  margin-bottom: 30px;
-}
 
 /* tightly stacked wordmark, flush left */
 .wordmark {
@@ -337,7 +332,6 @@ main { width: min(1120px, 90%); margin: 0 auto; }
 /* ---------- contact ---------- */
 .contact-wrap { display: grid; grid-template-columns: .9fr 1.1fr; gap: 24px; }
 .contact-info h3 { font-family: var(--serif); font-size: 1.6rem; font-weight: 600; margin-bottom: 12px; }
-.service-area { margin-top: 10px; }
 .contact-methods { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; margin: 20px 0; }
 .contact-mail, .contact-phone {
   display: inline-block; font-family: var(--mono); font-size: 1.05rem;
