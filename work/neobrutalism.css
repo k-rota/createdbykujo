@@ -11,12 +11,6 @@ img{display:block;}
 h1,h2,h3,.logo{font-family:"Archivo Black",sans-serif;text-transform:uppercase;letter-spacing:-1px;}
 
 /* cbk badge */
-.cbk-badge{position:fixed;bottom:18px;left:18px;z-index:99;display:flex;align-items:center;gap:8px;
-  background:var(--cyan);border:3px solid var(--black);box-shadow:var(--shadow);
-  padding:8px 14px;font-weight:700;font-size:.8rem;transition:transform .12s;}
-.cbk-badge:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--black);}
-.cbk-badge img{height:22px;width:auto;}
-.cbk-badge b{color:var(--pink);-webkit-text-stroke:.5px var(--black);}
 
 /* nav */
 .nav{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;

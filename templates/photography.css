@@ -22,28 +22,6 @@ body {
 
 a { color: inherit; }
 
-/* badge */
-.cbk-badge {
-  position: fixed;
-  left: 16px;
-  bottom: 16px;
-  z-index: 100;
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  padding: 7px 13px;
-  background: rgba(21, 19, 15, 0.92);
-  color: #fbfaf7;
-  border-radius: 999px;
-  text-decoration: none;
-  font-family: var(--sans);
-  font-size: 12px;
-  letter-spacing: 0.02em;
-  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.18);
-}
-.cbk-badge img { height: 20px; width: auto; display: block; }
-.cbk-badge b { font-weight: 700; }
-
 /* sticky minimal nav */
 .topbar {
   position: sticky;
@@ -247,7 +225,6 @@ h1 {
   .pk-price { grid-row: auto; grid-column: 1; }
   .topbar { padding: 18px 6vw; }
 }
-
 
 /* cross-template switcher */
 .tpl-switch{border-top:1px solid currentColor;padding:34px 22px 30px;text-align:center;font-family:inherit;}

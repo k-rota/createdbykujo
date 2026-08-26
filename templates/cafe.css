@@ -27,26 +27,6 @@ h1, h2, h3, .mark, .menu-col-title {
   line-height: 1.05;
 }
 
-/* Badge */
-.cbk-badge {
-  position: fixed;
-  left: 16px;
-  bottom: 16px;
-  z-index: 100;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--coffee-deep);
-  color: var(--cream);
-  padding: 7px 14px 7px 10px;
-  border-radius: 999px;
-  font-size: 13px;
-  text-decoration: none;
-  box-shadow: 0 6px 18px rgba(46, 31, 22, 0.28);
-}
-.cbk-badge img { height: 20px; width: auto; display: block; }
-.cbk-badge b { font-weight: 700; }
-
 /* Topbar */
 .topbar {
   display: flex;
@@ -236,7 +216,6 @@ h1, h2, h3, .mark, .menu-col-title {
   .story { grid-template-columns: 1fr; }
   .story-photo { min-height: 240px; }
 }
-
 
 /* cross-template switcher */
 .tpl-switch{border-top:1px solid currentColor;padding:34px 22px 30px;text-align:center;font-family:inherit;}
