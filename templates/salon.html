@@ -5,110 +5,162 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; base-uri 'self'; object-src 'none';" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
-  <meta name="description" content="Hair salon website template with services, pricing and booking, built by createdbykujo." />
+  <meta name="description" content="Hair salon website template with a price list, look book and booking, built by createdbykujo." />
   <title>Example Salon, template by createdbykujo</title>
   <link rel="icon" type="image/png" href="../assets/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Jost:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Jost:wght@300;400;500&display=swap" />
   <link rel="stylesheet" href="salon.css" />
 </head>
 <body>
+  <div class="grain" aria-hidden="true"></div>
+
   <header class="bar">
-    <span class="logo">Example<span class="dot">Salon</span></span>
+    <a class="logo" href="#top">Example <em>Salon</em></a>
     <nav class="links">
+      <a href="#menu">Price list</a>
       <a href="#looks">Look book</a>
-      <a href="#services">Services</a>
-      <a href="#about">About</a>
-      <a href="../index.html#contact" class="hire">Book now</a>
+      <a href="#room">The room</a>
+      <a href="../index.html#contact" class="book">Book</a>
     </nav>
   </header>
 
-  <main>
+  <main id="top">
+    <!-- HERO: asymmetric split. Type runs off the left edge, the arched
+         panel bleeds off the right, and the stamp straddles the seam. -->
     <section class="hero">
-      <p class="tag">Cut &middot; Color &middot; Care</p>
-      <h1 class="big">A cut that still looks good in six weeks.</h1>
-      <p class="sub">Example Salon is a full-service studio for cut, color and care. Book with a stylist who asks what your mornings actually look like.</p>
-      <div class="hero-actions">
-        <a href="../index.html#contact" class="btn-fill">Book an appointment</a>
-        <a href="#looks" class="btn-ghost">See the look book</a>
-      </div>
-      <ul class="stats">
-        <li><strong>12</strong><span>years on the block</span></li>
-        <li><strong>6</strong><span>stylists on the floor</span></li>
-        <li><strong>4.9</strong><span>average review</span></li>
-      </ul>
-    </section>
+      <div class="hero-type">
+        <p class="est">Est. 2011 &middot; 214 Mill Street</p>
+        <h1>Hair that<br /><em>grows out</em><br />well.</h1>
+        <p class="sub">
+          Six chairs, one room, no upselling. We cut for how your hair
+          actually behaves on a Tuesday morning &mdash; not for how it looks
+          for twenty minutes after a blow-dry.
+        </p>
+        <a class="under" href="../index.html#contact">Book a chair &rarr;</a>
 
-    <section id="looks" class="work">
-      <div class="head-row">
-        <h2>Look book</h2>
-        <span class="count">/ 05</span>
+        <dl class="hours">
+          <div><dt>Tue&ndash;Fri</dt><dd>9 &ndash; 7</dd></div>
+          <div><dt>Saturday</dt><dd>9 &ndash; 5</dd></div>
+          <div><dt>Sun &amp; Mon</dt><dd>closed</dd></div>
+        </dl>
       </div>
-      <div class="looks">
-        <a class="look p-big look-1" href="../index.html#contact">
-          <span class="look-type">Everyday</span>
-          <span class="look-title">Cut &amp; Style</span>
-        </a>
-        <a class="look look-2" href="../index.html#contact">
-          <span class="look-type">Color</span>
-          <span class="look-title">Balayage</span>
-        </a>
-        <a class="look look-3" href="../index.html#contact">
-          <span class="look-type">Texture</span>
-          <span class="look-title">Curls &amp; Coils</span>
-        </a>
-        <a class="look look-4" href="../index.html#contact">
-          <span class="look-type">Fades &amp; beards</span>
-          <span class="look-title">Barbering</span>
-        </a>
-        <a class="look look-5" href="../index.html#contact">
-          <span class="look-type">Special occasion</span>
-          <span class="look-title">Bridal &amp; Events</span>
-        </a>
+
+      <div class="hero-arch" aria-hidden="true">
+        <span class="arch-label">the chair by the window</span>
+        <span class="stamp">walk-ins<br />welcome</span>
       </div>
     </section>
 
-    <section id="services" class="services">
-      <h2>Services</h2>
-      <div class="cards">
-        <div class="card">
-          <span class="num">01</span>
+    <!-- PRICE LIST: a real salon menu with dot leaders, not a card grid. -->
+    <section id="menu" class="menu">
+      <div class="menu-head">
+        <h2>Price list</h2>
+        <p>Prices are a starting point. Long or very thick hair runs a little
+           over &mdash; we&rsquo;ll tell you before we start, not after.</p>
+      </div>
+
+      <div class="menu-cols">
+        <div class="group">
           <h3>Cuts</h3>
-          <p>Wash, cut and finish, with a consultation before the scissors come out.</p>
-          <p class="from">from $45</p>
+          <ul>
+            <li><span>Cut &amp; finish</span><b>45</b></li>
+            <li><span>Cut, no blow-dry</span><b>35</b></li>
+            <li><span>Kids, under 12</span><b>28</b></li>
+            <li><span>Bang trim</span><b class="free">free between cuts</b></li>
+          </ul>
         </div>
-        <div class="card">
-          <span class="num">02</span>
-          <h3>Color</h3>
-          <p>Gloss, full color, highlights and balayage, matched in natural light.</p>
-          <p class="from">from $95</p>
+
+        <div class="group">
+          <h3>Colour</h3>
+          <ul>
+            <li><span>Gloss</span><b>55</b></li>
+            <li><span>Root touch-up</span><b>85</b></li>
+            <li><span>Full highlights</span><b>145</b></li>
+            <li><span>Balayage</span><b>175</b></li>
+          </ul>
         </div>
-        <div class="card">
-          <span class="num">03</span>
+
+        <div class="group">
           <h3>Treatments</h3>
-          <p>Keratin smoothing, bond repair and scalp care for hair that needs a reset.</p>
-          <p class="from">from $60</p>
+          <ul>
+            <li><span>Bond repair</span><b>40</b></li>
+            <li><span>Scalp treatment</span><b>60</b></li>
+            <li><span>Keratin smoothing</span><b>220</b></li>
+          </ul>
         </div>
-        <div class="card">
-          <span class="num">04</span>
-          <h3>Bridal</h3>
-          <p>A trial run, day-of styling, and we come to you for the whole party.</p>
-          <p class="from">from $150</p>
+
+        <div class="group">
+          <h3>Occasion</h3>
+          <ul>
+            <li><span>Blowout</span><b>45</b></li>
+            <li><span>Event styling</span><b>75</b></li>
+            <li><span>Bridal, trial &amp; day-of</span><b>350</b></li>
+          </ul>
         </div>
       </div>
-      <p class="hours">Tue&ndash;Fri 9a&ndash;7p &middot; Sat 9a&ndash;5p &middot; Closed Sun &amp; Mon &middot; Walk-ins welcome when a chair is open</p>
+
+      <p class="menu-note">
+        Booked with a specific stylist? Say so when you call &mdash; Renata and
+        Dee book out about three weeks ahead, Marcus and Priya usually have
+        something inside a week.
+      </p>
     </section>
 
-    <section id="about" class="about">
-      <p class="about-kick">About</p>
-      <p class="about-text">Every appointment starts with a conversation, about your hair, your routine, and how much time you actually want to spend on it in the morning.</p>
+    <!-- LOOK BOOK: deliberately unequal tiles, numbered in the margin. -->
+    <section id="looks" class="looks">
+      <h2 class="looks-h">Look<br />book</h2>
+      <div class="grid">
+        <a class="plate p1" href="../index.html#contact">
+          <span class="n">01</span>
+          <span class="t">The grown-out bob</span>
+        </a>
+        <a class="plate p2" href="../index.html#contact">
+          <span class="n">02</span>
+          <span class="t">Lived-in balayage</span>
+        </a>
+        <a class="plate p3" href="../index.html#contact">
+          <span class="n">03</span>
+          <span class="t">Curls, cut dry</span>
+        </a>
+        <a class="plate p4" href="../index.html#contact">
+          <span class="n">04</span>
+          <span class="t">Skin fade &amp; beard</span>
+        </a>
+        <a class="plate p5" href="../index.html#contact">
+          <span class="n">05</span>
+          <span class="t">Low bun, bridal</span>
+        </a>
+      </div>
     </section>
 
-    <section class="contact-cta">
-      <h2>Book your chair.</h2>
-      <p>This is an example site. Yours would have your name on it.</p>
-      <a class="btn-fill big-btn" href="../index.html#contact">Book an appointment</a>
+    <!-- THE ROOM -->
+    <section id="room" class="room">
+      <div class="room-arch" aria-hidden="true"></div>
+      <div class="room-copy">
+        <p class="kick">The room</p>
+        <p class="big">
+          One long room above the hardware shop, six chairs, and a window
+          that faces east.
+        </p>
+        <p>
+          We opened in 2011 with two chairs and a secondhand backwash. Not much
+          has changed except the number of chairs. Every appointment starts
+          with a conversation about your hair, your routine, and how much time
+          you actually want to spend on it in the morning &mdash; and if the
+          honest answer is <em>none</em>, we&rsquo;ll cut for that.
+        </p>
+        <p class="sign">&mdash; Renata, Marcus, Priya &amp; Dee</p>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="cta-inner">
+        <h2>Book a chair.</h2>
+        <p>This is an example site. Yours would have your name on it.</p>
+        <a class="under light" href="../index.html#contact">Start a project &rarr;</a>
+      </div>
     </section>
   </main>
 
