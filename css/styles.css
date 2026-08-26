@@ -196,12 +196,20 @@ main { width: min(1120px, 90%); margin: 0 auto; }
 .about-bio strong { color: var(--gold); }
 .about-bio em { font-style: italic; color: var(--ink-2); }
 .about-stack h3 { font-family: var(--mono); font-size: .8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 14px; color: var(--gold); }
-.about-stack h3:nth-of-type(2){ margin-top: 26px; }
-.chips { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; }
-.chips li {
-  font-family: var(--mono); font-size: .78rem; padding: 6px 13px;
-  background: var(--paper-2); border: 1.5px solid var(--ink);
+
+/* the five build steps, numbered by the counter rather than by markup */
+.steps { list-style: none; counter-reset: step; display: flex; flex-direction: column; gap: 14px; }
+.steps li {
+  counter-increment: step; position: relative; padding-left: 34px;
 }
+.steps li::before {
+  content: counter(step, decimal-leading-zero);
+  position: absolute; left: 0; top: 1px;
+  font-family: var(--mono); font-size: .74rem; font-weight: 700;
+  color: var(--gold);
+}
+.steps b { display: block; font-family: var(--mono); font-size: .82rem; text-transform: uppercase; letter-spacing: .5px; }
+.steps span { color: var(--muted); font-size: .92rem; }
 
 /* ---------- services / pricing ---------- */
 .pricing-grid { display: grid; gap: 22px; grid-template-columns: repeat(3,1fr); }
