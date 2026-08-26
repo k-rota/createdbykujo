@@ -29,27 +29,6 @@ h1, h2, h3, .logo, .stat-num, .tier-name, .tier-price {
   line-height: 0.95;
 }
 
-/* Badge */
-.cbk-badge {
-  position: fixed;
-  left: 16px;
-  bottom: 16px;
-  z-index: 100;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--acid);
-  color: var(--black);
-  padding: 7px 14px 7px 10px;
-  border-radius: 999px;
-  font-size: 13px;
-  font-weight: 600;
-  text-decoration: none;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
-}
-.cbk-badge img { height: 20px; width: auto; display: block; }
-.cbk-badge b { font-weight: 800; }
-
 /* Top bar */
 .bar {
   display: flex;
@@ -305,7 +284,6 @@ h1, h2, h3, .logo, .stat-num, .tier-name, .tier-price {
   .sched-table th:nth-child(4),
   .sched-table td:nth-child(4) { display: none; }
 }
-
 
 /* cross-template switcher */
 .tpl-switch{border-top:1px solid currentColor;padding:34px 22px 30px;text-align:center;font-family:inherit;}

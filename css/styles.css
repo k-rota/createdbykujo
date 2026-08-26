@@ -130,11 +130,6 @@ main { width: min(1120px, 90%); margin: 0 auto; }
    mixing serif + mono, with the leaf standing in as punctuation.
    ============================================================ */
 .hero { padding: 70px 0 40px; }
-.eyebrow {
-  font-family: var(--mono); color: var(--gold); font-weight: 700;
-  letter-spacing: 2px; text-transform: uppercase; font-size: .78rem;
-  margin-bottom: 30px;
-}
 
 /* tightly stacked wordmark, flush left */
 .wordmark {
@@ -201,12 +196,20 @@ main { width: min(1120px, 90%); margin: 0 auto; }
 .about-bio strong { color: var(--gold); }
 .about-bio em { font-style: italic; color: var(--ink-2); }
 .about-stack h3 { font-family: var(--mono); font-size: .8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 14px; color: var(--gold); }
-.about-stack h3:nth-of-type(2){ margin-top: 26px; }
-.chips { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; }
-.chips li {
-  font-family: var(--mono); font-size: .78rem; padding: 6px 13px;
-  background: var(--paper-2); border: 1.5px solid var(--ink);
+
+/* the five build steps, numbered by the counter rather than by markup */
+.steps { list-style: none; counter-reset: step; display: flex; flex-direction: column; gap: 14px; }
+.steps li {
+  counter-increment: step; position: relative; padding-left: 34px;
 }
+.steps li::before {
+  content: counter(step, decimal-leading-zero);
+  position: absolute; left: 0; top: 1px;
+  font-family: var(--mono); font-size: .74rem; font-weight: 700;
+  color: var(--gold);
+}
+.steps b { display: block; font-family: var(--mono); font-size: .82rem; text-transform: uppercase; letter-spacing: .5px; }
+.steps span { color: var(--muted); font-size: .92rem; }
 
 /* ---------- services / pricing ---------- */
 .pricing-grid { display: grid; gap: 22px; grid-template-columns: repeat(3,1fr); }
@@ -328,16 +331,15 @@ main { width: min(1120px, 90%); margin: 0 auto; }
 }
 .wt-rest { background: #1f3324; }
 .wt-rest span { font-family: var(--serif); font-weight: 600; font-size: 2.1rem; color: #f3f1e7; }
-.wt-port { background: #fff; }
-.wt-port span {
-  font-family: var(--grot); font-weight: 700; font-size: 1.9rem; letter-spacing: -.03em;
-  color: #16161d; border-bottom: 5px solid #5b4bff;
+.wt-salon { background: #fdf9f8; }
+.wt-salon span {
+  font-family: var(--serif); font-weight: 600; font-size: 2rem; letter-spacing: -.02em;
+  color: #241b20; border-bottom: 5px solid #9c4a63;
 }
 
 /* ---------- contact ---------- */
 .contact-wrap { display: grid; grid-template-columns: .9fr 1.1fr; gap: 24px; }
 .contact-info h3 { font-family: var(--serif); font-size: 1.6rem; font-weight: 600; margin-bottom: 12px; }
-.service-area { margin-top: 10px; }
 .contact-methods { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; margin: 20px 0; }
 .contact-mail, .contact-phone {
   display: inline-block; font-family: var(--mono); font-size: 1.05rem;
@@ -384,6 +386,8 @@ select.just-set { background: #fff; box-shadow: 5px 5px 0 var(--gold); border-co
 }
 .footer img { width: auto; height: 30px; }
 .footer-legal { display: flex; gap: 14px; }
+/* padded to clear the 24px minimum tap target on a phone */
+.footer-legal a, .to-top { display: inline-flex; align-items: center; min-height: 24px; padding: 2px 0; }
 .footer-legal a:hover { color: var(--gold); }
 .to-top { margin-left: auto; color: var(--gold); font-weight: 700; }
 
