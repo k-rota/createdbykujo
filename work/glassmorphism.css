@@ -49,11 +49,9 @@ main{width:min(1080px,92%);margin:0 auto;}
 .ptag{font-weight:700;font-size:.8rem;letter-spacing:1px;text-transform:uppercase;opacity:.7;}
 .pname{font-size:2.4rem;font-weight:800;line-height:1;margin:6px 0 4px;}
 .prole{opacity:.8;margin-bottom:20px;font-size:.95rem;}
-.skill{margin:12px 0;}
-.skill .row{display:flex;justify-content:space-between;font-weight:700;font-size:.9rem;margin-bottom:6px;}
-.bar{height:10px;border-radius:999px;background:rgba(255,255,255,.35);overflow:hidden;}
-.bar i{display:block;height:100%;background:var(--grad);border-radius:999px;}
-.bar i.w92{width:92%;}.bar i.w88{width:88%;}.bar i.w80{width:80%;}.bar i.w75{width:75%;}
+.plist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;}
+.plist li{position:relative;padding-left:22px;font-size:.92rem;line-height:1.45;opacity:.9;}
+.plist li::before{content:"";position:absolute;left:0;top:.5em;width:8px;height:8px;border-radius:999px;background:var(--grad);}
 
 .features{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;padding:40px 0;}
 .features .step{display:inline-grid;place-items:center;width:42px;height:42px;border-radius:50%;
