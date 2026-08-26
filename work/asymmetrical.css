@@ -20,13 +20,19 @@ main{width:100%;}
 .big{font-weight:800;line-height:.8;letter-spacing:-4px;display:block;position:absolute;}
 .big-1{font-size:clamp(6rem,28vw,22rem);top:4%;left:-2%;color:var(--ink);}
 .big-2{font-size:clamp(6rem,28vw,22rem);top:34%;right:-3%;color:var(--accent);text-align:right;}
-.kicker{position:absolute;top:30%;left:50%;font-size:.85rem;letter-spacing:2px;text-transform:uppercase;
-  writing-mode:vertical-rl;opacity:.7;}
+/* kicker + index number anchor the bottom-right corner together, set like a
+   caption and a folio. The kicker used to sit at left:50% running vertically,
+   which the giant type grew straight through once the viewport got wide
+   enough; laid flat on the number's own line it cannot collide at any size. */
+.hero-mark{position:absolute;bottom:6%;right:6%;display:flex;align-items:center;gap:16px;}
+.kicker{font-size:.8rem;letter-spacing:2px;text-transform:uppercase;opacity:.7;white-space:nowrap;}
+.kicker::after{content:"";display:inline-block;width:34px;height:1.5px;background:currentColor;
+  vertical-align:middle;margin-left:16px;opacity:.5;}
 .lead{position:absolute;bottom:16%;left:clamp(20px,6vw,80px);max-width:34ch;font-size:1.15rem;font-weight:300;}
 .line-link{position:absolute;font-weight:600;border-bottom:2px solid var(--accent);}
 .l-a{bottom:9%;left:clamp(20px,6vw,80px);}
 .l-a:hover{color:var(--accent);}
-.float-num{position:absolute;bottom:6%;right:6%;font-family:"Syne",sans-serif;font-weight:800;font-size:clamp(2rem,6vw,4rem);
+.float-num{font-family:"Syne",sans-serif;font-weight:800;font-size:clamp(2rem,6vw,4rem);line-height:.8;
   -webkit-text-stroke:1.5px var(--ink);color:transparent;}
 
 /* work, staggered, off-grid cards */
@@ -59,8 +65,7 @@ main{width:100%;}
   .hero{min-height:auto;padding-bottom:120px;}
   .big{position:static;letter-spacing:-2px;}
   .big-2{text-align:left;}
-  .kicker{display:none;}
   .lead,.l-a{position:static;margin-top:24px;}
-  .float-num{display:none;}
+  .hero-mark{display:none;}
   .p2,.p3{margin-left:0;}
 }
