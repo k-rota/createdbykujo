@@ -20,43 +20,75 @@ links?.querySelectorAll("a").forEach((a) =>
   })
 );
 
-/* ---------- scroll reveal ---------- */
+/* ---------- scroll reveal ----------
+   Two things keep this from feeling laggy:
+
+   1. rootMargin starts the transition ~250px BEFORE an element reaches the
+      viewport, so it has already finished by the time you scroll to it.
+   2. The stagger is counted per batch, not per document index. Indexing
+      across the whole document meant every element past the fifth inherited
+      the same capped delay, so the entire page below the fold animated a
+      flat 300ms late. */
 const revealEls = document.querySelectorAll<HTMLElement>("[data-reveal]");
 const io = new IntersectionObserver(
   (entries) => {
+    let inBatch = 0;
     entries.forEach((e) => {
-      if (e.isIntersecting) {
-        e.target.classList.add("in");
-        io.unobserve(e.target);
-      }
+      if (!e.isIntersecting) return;
+      const el = e.target as HTMLElement;
+      el.style.transitionDelay = `${Math.min(inBatch++ * 45, 135)}ms`;
+      el.classList.add("in");
+      io.unobserve(el);
     });
   },
-  { threshold: 0.15 }
+  { threshold: 0, rootMargin: "0px 0px 250px 0px" }
 );
-revealEls.forEach((el, i) => {
-  el.style.transitionDelay = `${Math.min(i * 60, 300)}ms`;
-  io.observe(el);
-});
+revealEls.forEach((el) => io.observe(el));
 
 /* ---------- cursor glow ---------- */
 const glow = document.querySelector<HTMLElement>(".cursor-glow");
 if (glow && window.matchMedia("(pointer:fine)").matches) {
+  // Coalesce moves into one write per frame; pointermove can fire well above
+  // 60Hz and each write here invalidates a 320px blurred layer.
+  let gx = 0, gy = 0, glowQueued = false;
   window.addEventListener("pointermove", (ev) => {
-    glow.style.opacity = "1";
-    glow.style.transform = `translate(${ev.clientX}px, ${ev.clientY}px)`;
-  });
+    gx = ev.clientX;
+    gy = ev.clientY;
+    if (glowQueued) return;
+    glowQueued = true;
+    requestAnimationFrame(() => {
+      glowQueued = false;
+      glow.style.opacity = "1";
+      glow.style.transform = `translate3d(${gx}px, ${gy}px, 0)`;
+    });
+  }, { passive: true });
 }
 
 /* ---------- 3D tilt on cards ---------- */
 const tiltEls = document.querySelectorAll<HTMLElement>(".tilt");
 tiltEls.forEach((el) => {
+  // The rect is measured once on enter rather than on every move: reading it
+  // mid-move forces a synchronous layout on each pointer event.
+  let rect: DOMRect | null = null;
+  let tiltQueued = false;
+  let mx = 0, my = 0;
+
+  el.addEventListener("pointerenter", () => { rect = el.getBoundingClientRect(); });
   el.addEventListener("pointermove", (ev) => {
-    const r = el.getBoundingClientRect();
-    const px = (ev.clientX - r.left) / r.width - 0.5;
-    const py = (ev.clientY - r.top) / r.height - 0.5;
-    el.style.transform = `perspective(800px) rotateY(${px * 8}deg) rotateX(${-py * 8}deg) translateY(-4px)`;
-  });
+    mx = ev.clientX;
+    my = ev.clientY;
+    if (tiltQueued) return;
+    tiltQueued = true;
+    requestAnimationFrame(() => {
+      tiltQueued = false;
+      const r = rect ?? el.getBoundingClientRect();
+      const px = (mx - r.left) / r.width - 0.5;
+      const py = (my - r.top) / r.height - 0.5;
+      el.style.transform = `perspective(800px) rotateY(${px * 8}deg) rotateX(${-py * 8}deg) translateY(-4px)`;
+    });
+  }, { passive: true });
   el.addEventListener("pointerleave", () => {
+    rect = null;
     el.style.transform = "";
   });
 });
