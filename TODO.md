@@ -31,12 +31,42 @@ content — your call on how to handle it).
       "Effective ... Applies to createdbykujo.dev", "createdbykujo.dev is
       operated by" — correctly left as `.dev` since that's the real site
       domain; only the `mailto:` addresses changed. Commit `a8d4af1`.
+- [x] **DONE** — Architecture + copy pass. The site now commits to being
+      a business storefront instead of a personal-portfolio/storefront
+      hybrid. Section 01 became "who you're working with" (degree line
+      and tech-stack chips removed, the five build steps promoted into
+      their place); geographic targeting came out of all marketing copy
+      while the legal geo strings in `terms.html` were preserved (the
+      venue clause needs its county); `templates/portfolio.html` became
+      `templates/salon.html` with all nine inbound references updated;
+      the four `/work/` demos were reframed as range for a buyer and
+      lost their resume content (skill-bar percentages, `skills.json`,
+      the tech marquee); and the voice went plainspoken throughout.
+      Commits `73a799a` through `a169d7b`.
+- [x] **DONE** — Dead code removed: `templates/base.css`, the inert
+      `.t-*` body classes, `imgs/`, the `[data-count]` animation, the
+      unexplained CSP script hash, the `.cbk-badge` rules in all ten
+      demo stylesheets, and the `frame-ancestors` directive in every
+      meta CSP (inert there, and already delivered by `_headers`).
+- [x] **DONE** — Two real bugs fixed. `src/main.ts` had drifted *behind*
+      its own compiled `js/main.js`: the artifact checked the Web3Forms
+      response body for `success`, the source only checked `res.ok`.
+      Since Web3Forms answers 200 with `success:false` on rejection, a
+      rebuild would have shipped a form that showed "Got it." while the
+      message went nowhere. Logic ported back into the TypeScript, and
+      both paths verified in a browser. Also fixed the submit button
+      losing its arrow ("Send it" vs "Send it →") after a failed send.
+- [x] **DONE** — Second 375px mobile pass, this time in a real browser
+      (the earlier one was CSS-only). Confirmed no horizontal scroll,
+      no mid-phrase wrapping in the rebuilt hero stat row, and fixed
+      three footer links that were 20px tall, under the 24px minimum
+      tap target. Commit `c994621`.
 
 ## Content needed from you (still blocked)
 
 - [ ] **BLOCKED** — Real client project slot (`index.html`, "built for
-      businesses like yours" section) — commented out. Need: screenshot,
-      business name, one-line description, live link, optional quote.
+      your needs" section) — commented out. Need: screenshot, business
+      name, one-line description, live link, optional quote.
 - [ ] **BLOCKED** — Phone number (`index.html`, contact section) —
       commented out. Need the real number, e.g. `tel:+12481234567`.
 - [ ] **BLOCKED** — OG preview image — `assets/og-image.png`, 1200x630
@@ -44,6 +74,32 @@ content — your call on how to handle it).
 - [ ] **BLOCKED** — JSON-LD `telephone` field — omitted from the
       structured data in `index.html`. Add once the phone number above
       is real (same blocker as above).
+
+## Your call
+
+- [ ] **NEEDS DECISION** — The word "template" now contradicts the
+      homepage. The hero sells "100% custom code" and the meta
+      description says "No templates, no page builders", but every demo
+      page still ends with a `template by createdbykujo` byline, the
+      cross-links are labelled "More templates", and the `<title>` of
+      each is "Example X, template by createdbykujo". The CTA line on
+      all six was changed to "This is an example site" as part of the
+      copy pass, which made the remaining "template" wording stand out
+      more, not less.
+
+      Three options: (a) leave it — the byline is a credit, not a claim
+      about what the buyer gets; (b) swap "template" for "example"
+      everywhere in the demo chrome, so the whole site says one thing;
+      (c) drop "No templates" from the homepage instead and own the word.
+      I'd take (b), but it touches every demo page's title and footer, so
+      it's your call rather than mine.
+
+- [ ] **NEEDS DECISION** — Local SEO. Removing "Highland" and the county
+      names also meant dropping `addressLocality` and `areaServed` from
+      the JSON-LD, which were the strongest "web designer near me"
+      signals on the site. If local search traffic matters, adding back
+      `"areaServed": { "@type": "State", "name": "Michigan" }` keeps some
+      signal without naming towns.
 
 ## Dashboard / account checks (still blocked — I don't have access)
 
