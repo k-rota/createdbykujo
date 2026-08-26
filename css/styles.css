@@ -386,6 +386,8 @@ select.just-set { background: #fff; box-shadow: 5px 5px 0 var(--gold); border-co
 }
 .footer img { width: auto; height: 30px; }
 .footer-legal { display: flex; gap: 14px; }
+/* padded to clear the 24px minimum tap target on a phone */
+.footer-legal a, .to-top { display: inline-flex; align-items: center; min-height: 24px; padding: 2px 0; }
 .footer-legal a:hover { color: var(--gold); }
 .to-top { margin-left: auto; color: var(--gold); font-weight: 700; }
 
