@@ -331,10 +331,10 @@ main { width: min(1120px, 90%); margin: 0 auto; }
 }
 .wt-rest { background: #1f3324; }
 .wt-rest span { font-family: var(--serif); font-weight: 600; font-size: 2.1rem; color: #f3f1e7; }
-.wt-port { background: #fff; }
-.wt-port span {
-  font-family: var(--grot); font-weight: 700; font-size: 1.9rem; letter-spacing: -.03em;
-  color: #16161d; border-bottom: 5px solid #5b4bff;
+.wt-salon { background: #fdf9f8; }
+.wt-salon span {
+  font-family: var(--serif); font-weight: 600; font-size: 2rem; letter-spacing: -.02em;
+  color: #241b20; border-bottom: 5px solid #9c4a63;
 }
 
 /* ---------- contact ---------- */
